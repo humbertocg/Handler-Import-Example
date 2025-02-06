@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Renderer="clr-namespace:PickerCustomThumb;assembly:PickerCustomThumb"
+             x:Class="PickerCustomThumb.MainPage">
+
+    <ContentPage.Content>
+        <Grid>
+            <!---<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">-->
+            <Renderer:ExtendedSlider NameString="thumbEncendido" 
+                                     x:Name="SliderCustom" 
+                                     ThumbIndicator="True" 
+                                     VerticalOptions="Center" 
+                                     HorizontalOptions="FillAndExpand" 
+                                     Maximum="10" 
+                                     Minimum="0" />
+            <Renderer:ExtendedSlider NameString="sinthumb" 
+                                     ThumbIndicator="False" 
+                                     Value="{Binding Source={x:Reference SliderCustom},Path=Value}" 
+                                     Maximum="10" 
+                                     Minimum="0" 
+                                     VerticalOptions="Center" 
+                                     HorizontalOptions="FillAndExpand" 
+                                     Margin="0,55,0,0"/>
+            <!--</StackLayout>-->
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>
